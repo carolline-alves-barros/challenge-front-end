@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  
+  <link rel="stylesheet" href="css/reset.min.css">
+
+  <link rel="stylesheet" href="font/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container ">
+    <img src ="img/logo.png" alt="logo" class="img-logo" />
+    <div class="chat">
+      <div class="chat-header clearfix">
+      <div class="chat-history">
+        <ul> 
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Atendente</span>
+              <span class="message-data-time">Hoje</span>
+            </div>
+            <div class="message my-message">
+              Olá, seja bem-vindo a Creditas. Conheça nossos serviços!
+            </div>
+          </li> 
+        </ul> 
+      </div> <!-- final chat-history -->
+      <div class="chat-message clearfix">
+        <textarea name="message-to-send" id="message-to-send" placeholder ="Digite sua mensagem" rows="3"></textarea>
+        <button>Enviar</button>
+      </div> <!-- final chat-message -->
+      
+    </div> <!-- final chat -->
+    
+  </div> <!-- final container -->
+
+<script id="message-template" type="text/x-handlebars-template">
+  <li class="clearfix">
+    <div class="message-data align-right">
+      <span class="message-data-time" >{{time}}, Hoje</span> &nbsp; &nbsp;
+      <span class="message-data-name" >Eu</span> <i class="fa fa-circle me"></i>
+    </div>
+    <div class="message other-message float-right">
+      {{messageOutput}}
+    </div>
+  </li>
+</script>
+
+<script id="message-response-template" type="text/x-handlebars-template">
+  <li>
+    <div class="message-data">
+      <span class="message-data-name"><i class="fa fa-circle online"></i> Atendente</span>
+      <span class="message-data-time">{{time}}, Hoje</span>
+    </div>
+    <div class="message my-message">
+      {{response}}
+    </div>
+  </li>
+</script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+<script src="js/handlebars.min.js"></script>
+<script src="js/list.min.js"></script>
+<script  src="js/index.js"></script>
+
+</body>
+</html>
